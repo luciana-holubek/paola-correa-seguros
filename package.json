@@ -1,0 +1,30 @@
+{
+  "name": "desafio-sass",
+  "version": "1.0.0",
+  "description": "entrega sass 31-08",
+  "main": "index.html",
+  "scripts": {
+    "build-css": "node-sass --include-path scss styles/scss/main.scss styles/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luscziana/paola-correa-seguros.git"
+  },
+  "keywords": [
+    "paola",
+    "correa",
+    "seguros",
+    "sass"
+  ],
+  "author": "luciana correa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luscziana/paola-correa-seguros/issues"
+  },
+  "homepage": "https://github.com/luscziana/paola-correa-seguros#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}

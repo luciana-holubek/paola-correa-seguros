@@ -5,10 +5,62 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif
 }
 
 body,
 .navbar {
     background-image: $bg;
+}
+
+
+// Mixin //
+@mixin imagenGrande ($ancho, $alto, $bg-size, $margin, $justify) {
+    width: $ancho;
+    height: $alto;
+    background-size: $bg-size;
+    margin-block: $margin;
+    justify-content: $justify;
+}
+
+.imagenSeguros,
+.imagenInformacionUtil {
+    @include imagenGrande (100%, 500px, cover, 40px, center);
+}
+
+
+// Extend //
+.containerImagenInformacionUtil {
+    width: 600px;
+    margin: 40px;
+    padding: 30px;
+}
+
+.containerImagenSeguros {
+    @extend .containerImagenInformacionUtil;
+}
+
+
+// Map y Map-get //
+
+$marcas: (
+    atm: rgb(64, 64, 156),
+    bbva: rgb(172, 58, 117),
+    rivadavia: rgb(30, 135, 30)
+);
+
+@each $marca,
+$color in $marcas {
+    .imagenMarca#{$marca} {
+        background-color: $color;
+    }
+}
+
+//No me esta funcionando//
+.imagenMarca-atm,
+.imagenMarca-bbva,
+.imagenMarca-rivadavia {
+    width: 100px;
+    height: 150px;
+    display: flex;
 }
